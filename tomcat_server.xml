@@ -1,0 +1,5 @@
+    <server>
+       <id>TomcatServer</id>
+       <username>lamdmark</username>
+       <password>admin123</password>
+    </server>
