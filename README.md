@@ -9,13 +9,13 @@ Step 1 - Launch an EC2 instance;
 
 Step 2 - Configure Maven Build Server;
 Install Git;
---- yum install git;
+--- sudo yum install git -y
 Clone Java_Projects repo;
---- git clone https://github.com/Lagotechsolutions/Java_Projects.git;
-Grant executable rights to the script
---- sudo chmod u+x maven_script.sh 
+--- git clone https://github.com/Lagotechsolutions/Java_Projects.git
+Grant executable rights to the script;
+--- sudo chmod u+x /home/ec2-user/Java_Projects/maven_script.sh 
 Execute script;
---- sh /home/ec2-user/Java_Projects/maven_script.sh;
+--- sh /home/ec2-user/Java_Projects/maven_script.sh
 
 Step 3 - Configure TomCat App Servers;
 Install Git;
