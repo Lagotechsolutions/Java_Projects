@@ -19,10 +19,11 @@ sudo chown ec2-user -R /opt/tomcat9
 sh /opt/tomcat9/bin/startup.sh
 # create a soft link to start and stop tomcat
 # This will enable us to manage tomcat as a service
-sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
-sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
-starttomcat
-sudo su - ec2-user
-sudo sed -i '55r /home/ec2-user/Java_Projects/tomcat_users.xml' /opt/tomcat9/conf/tomcat_users.xml
+#sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
+#sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
+#starttomcat
+sudo mv /home/ec2-user/Java_Projects/tomcat_users.sh /opt/tomcat9/conf
+cd /opt/tomcat9/conf
+sudo sed -i '55r tomcat_users.sh' tomcat_users.xml
 sudo sed -i '21i <!--' /opt/tomcat9/webapps/manager/META-INF/context.xml
 sudo sed -i '24i -->' /opt/tomcat9/webapps/manager/META-INF/context.xml
