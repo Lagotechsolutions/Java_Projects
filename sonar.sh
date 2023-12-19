@@ -17,18 +17,18 @@ sleep 5
 sudo rm -rf sonarqube-7.8.zip
 sudo mv sonarqube-7.8 sonarqube
 #Grant file permissions to sonarqube folder for sonar user
-sudo chown -R sonar:sonar /opt/sonarqube/
 sudo chmod -R 775 /opt/sonarqube/
-#Start Sonarqube
-sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
-sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 #set hostname for sonarqube server
 sudo hostnamectl set-hostname sonar 
 # Create a sonar user
 sudo useradd sonar
 # Grant sudo access to sonar user
 sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
-# set hostname for the sonarqube server
-sudo su - sonar
+#Grant file permissions to sonarqube folder for sonar user
+sudo chown -R sonar:sonar /opt/sonarqube/
 # Create a password for sonar user
 sudo passwd sonar
+#Start Sonarqube
+sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
+sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
+sudo su - sonar
