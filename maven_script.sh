@@ -11,8 +11,8 @@ sleep 3
 sudo rm -rf apache-maven-3.9.5-bin.zip
 sudo mv apache-maven-3.9.5/ maven
 cd /home/ec2-user
-echo "export PATH=$PATH:/opt/maven/bin" >> ~/.bash_profile
-source ~/.bash_profile
+echo "export PATH=$PATH:/opt/maven/bin" >> /etc/profile
+source /etc/profile
 cd /home/ec2-user/Java_Projects/lagotech-web-app/
 mvn clean package
 sleep 5
