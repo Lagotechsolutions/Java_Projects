@@ -1,13 +1,4 @@
 #!/bin/bash
-# Create a sonar user
-sudo useradd sonar
-# Grand sudo access to sonar user
-sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
-# set hostname for the sonarqube server
-sudo hostnamectl set-hostname sonar 
-sudo su - sonar
-# Create a password for sonar user
-sudo passwd sonar
 # Enable Password Authentication for sonar user
 sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
 sudo service sshd restart
@@ -31,3 +22,13 @@ sudo chmod -R 775 /opt/sonarqube/
 #Start Sonarqube
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
+#set hostname for sonarqube server
+sudo hostnamectl set-hostname sonar 
+# Create a sonar user
+sudo useradd sonar
+# Grant sudo access to sonar user
+sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
+# set hostname for the sonarqube server
+sudo su - sonar
+# Create a password for sonar user
+sudo passwd sonar
