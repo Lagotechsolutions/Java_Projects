@@ -1,4 +1,6 @@
 #!/bin/bash
+#Install Java
+sudo yum install java -y
 #Install Nginx
 sudo yum install nginx -y
 #Enable the nginx service
