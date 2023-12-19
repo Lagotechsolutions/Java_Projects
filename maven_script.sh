@@ -22,3 +22,5 @@ sudo sed -i '132r /home/ec2-user/Java_Projects/tomcat_server.xml' /opt/maven/con
 sleep 5
 sudo scp -i /home/ec2-user/Java_Projects/Build_Server.pem /home/ec2-user/Java_Projects/lagotech-web-app/target/lagotech-web-app.war ec2-user@54.234.176.69:/opt/tomcat9/webapps
 sudo hostnamectl set-hostname maven
+exit
+
