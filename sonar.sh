@@ -26,9 +26,10 @@ sudo useradd sonar
 sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
 #Grant file permissions to sonarqube folder for sonar user
 sudo chown -R sonar:sonar /opt/sonarqube/
-#Start Sonarqube
-sudo su - sonar
 # Create a password for sonar user
-sudo passwd sonarqube
-sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
-sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
+sudo passwd sonar
+#Start Sonarqube
+su -c '/opt/sonarqube/bin/linux-x86-64/sonar.sh start' sonar
+su -c '/opt/sonarqube/bin/linux-x86-64/sonar.sh status' sonar
+#switch to sonar user
+sudo su - sonar
