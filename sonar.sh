@@ -1,5 +1,5 @@
 #!/bin/bash
-# Enable Password Authentication for sonar user
+#Enable Password Authentication for sonar user
 sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config
 sudo service sshd restart
 sleep 3
@@ -26,9 +26,9 @@ sudo useradd sonar
 sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
 #Grant file permissions to sonarqube folder for sonar user
 sudo chown -R sonar:sonar /opt/sonarqube/
-# Create a password for sonar user
-sudo passwd sonar
 #Start Sonarqube
+sudo su - sonar
+# Create a password for sonar user
+sudo passwd sonarqube
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
-sudo su - sonar
