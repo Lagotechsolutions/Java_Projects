@@ -9,7 +9,7 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 #Check the nginx service status
 sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bkp
-sudo mv /home/ec2-user/Java_Projects/nginx.conf /etc/nginx/nginx.conf
+sudo cp /home/ec2-user/Java_Projects/nginx.conf /etc/nginx/
 #Reload the nginx service
 sudo nginx -s reload
 #Restart the nginx service
