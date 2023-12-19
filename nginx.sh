@@ -16,4 +16,6 @@ sudo nginx -s reload
 sudo systemctl restart nginx
 #Change hostname to NGINX
 sudo hostnamectl set-hostname NGINX
+echo "`curl ifconfig.me`"
+sleep 3
 exit
