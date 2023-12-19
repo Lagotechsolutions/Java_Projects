@@ -9,7 +9,7 @@ sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0
 sleep 3
 sudo unzip apache-tomcat-9.0.84.zip
 sleep 3
-sudo rm -rf aapache-tomcat-9.0.84.zip
+sudo rm -rf apache-tomcat-9.0.84.zip
 ### rename tomcat for good naming convention
 sudo mv apache-tomcat-9.0.84 tomcat9
 ### assign executable permissions to the tomcat home directory
@@ -23,3 +23,6 @@ sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
 sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
 starttomcat
 sudo su - ec2-user
+sudo sed -i '55r /home/ec2-user/Java_Projects/tomcat_users.xml' /opt/tomcat9/conf/tomcat_users.xml
+sudo sed -i '21i <!--' /opt/tomcat9/webapps/manager/META-INF/context.xml
+sudo sed -i '24i -->' /opt/tomcat9/webapps/manager/META-INF/context.xml
