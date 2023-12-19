@@ -6,7 +6,7 @@ sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0
 sudo unzip apache-tomcat-9.0.84.zip
 sudo rm -rf aapache-tomcat-9.0.84.zip
 ### rename tomcat for good naming convention
-sudo mv apache-tomcat-9.0.84.zip  tomcat9
+sudo mv apache-tomcat-9.0.84 tomcat9
 ### assign executable permissions to the tomcat home directory
 sudo chmod 777 -R /opt/tomcat9
 sudo chown ec2-user -R /opt/tomcat9
