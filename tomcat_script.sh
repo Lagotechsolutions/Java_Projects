@@ -27,3 +27,4 @@ cd /opt/tomcat9/conf
 sudo sed -i '55r tomcat_users.sh' tomcat_users.xml
 sudo sed -i '21i <!--' /opt/tomcat9/webapps/manager/META-INF/context.xml
 sudo sed -i '24i -->' /opt/tomcat9/webapps/manager/META-INF/context.xml
+sudo hostnamectl set-hostname tomcat9
