@@ -20,5 +20,5 @@ mvn clean package
 sleep 5
 sudo sed -i '132r /home/ec2-user/Java_Projects/tomcat_server.xml' /opt/maven/conf/settings.xml
 sleep 5
-#sudo scp -i Build_Server.pem /home/ec2-user/Java_Projects/lagotech-web-app/target/lagotech-web-app.war ec2-user@<tomcat_ip>:/opt/tomcat9/webapps
+sudo scp -i Build_Server.pem /home/ec2-user/Java_Projects/lagotech-web-app/target/lagotech-web-app.war ec2-user@54.196.98.197:/opt/tomcat9/webapps
 sudo hostnamectl set-hostname maven
