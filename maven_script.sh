@@ -14,7 +14,7 @@ cd /home/ec2-user
 sudo chown ec2-user:ec2-user /etc/profile
 sudo chmod 775 /etc/profile
 sudo echo "export PATH=$PATH:/opt/maven/bin" >> /etc/profile
-sudo source /etc/profile
+source /etc/profile
 cd /home/ec2-user/Java_Projects/lagotech-web-app/
 mvn clean package
 sleep 5
