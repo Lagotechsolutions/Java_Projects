@@ -2,8 +2,13 @@
 cd /opt
 #install utility tools
 sudo yum install wget tree unzip git-all -y
+sleep 3
+sudo yum install java -y
+sleep 3
 sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0.84.zip
+sleep 3
 sudo unzip apache-tomcat-9.0.84.zip
+sleep 3
 sudo rm -rf aapache-tomcat-9.0.84.zip
 ### rename tomcat for good naming convention
 sudo mv apache-tomcat-9.0.84 tomcat9
