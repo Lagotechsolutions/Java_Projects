@@ -15,17 +15,17 @@ sudo mv apache-tomcat-9.0.84 tomcat9
 ### assign executable permissions to the tomcat home directory
 sudo chmod 777 -R /opt/tomcat9
 sudo chown ec2-user:ec2-user -R /opt/tomcat9
-### start tomcat
-sh /opt/tomcat9/bin/startup.sh
 # create a soft link to start and stop tomcat
 # This will enable us to manage tomcat as a service
-#sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
-#sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
-#starttomcat
+sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
+sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
 sudo mv /home/ec2-user/Java_Projects/tomcat_users.sh /opt/tomcat9/conf
 cd /opt/tomcat9/conf
 sudo sed -i '55r tomcat_users.sh' tomcat-users.xml
 sudo sed -i '21i <!--' /opt/tomcat9/webapps/manager/META-INF/context.xml
 sudo sed -i '24i -->' /opt/tomcat9/webapps/manager/META-INF/context.xml
 sudo hostnamectl set-hostname tomcat9
+### start tomcat
+#sh /opt/tomcat9/bin/startup.sh
+starttomcat
 echo "`curl ifconfig.me`"
