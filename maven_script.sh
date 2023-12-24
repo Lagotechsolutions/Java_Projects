@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /opt
 sudo yum install wget tree unzip git-all -y
-sleep 3
+#sleep 3
 sudo yum install java -y
 sleep 3
 sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.zip
